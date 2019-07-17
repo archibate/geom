@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+		<script src="geo-0.2.1.min.js"></script>
+		<link rel="stylesheet" href="geo-0.1.6.min.css"/>
+	</head>
+	<body>
+		<div id="geo_cont_div"></div>
+		<script>
+			$(function() {
+				// 这里添加一些代码.
+				var GPad = window.GPad || window.jGEO || window.$G;
+				var opt = {//{{{
+					// 定制工具栏.
+					toolbox: {
+					},
+					// 定制菜单.
+					menu: {
+						menus: [
+							// 这里可以手动调整菜单及菜单子项的顺序.
+							'edit:undo,redo,-,del,clear,-,sel_all,texed',
+							'show:pt_sty,ln_sty,color,-,hide,show_all,-,label',
+							'cons:poo,midpt,intp,-,seg,ray,line,par,perp,bis,-,circ,circ_rad,arc,arc_3',
+							'xfrm:on,st_cent,-,x_xlate,x_rota,x_dila,x_refl',
+							'meas:mlean,mdist,mperi,mcirf,mang,marea,mrad,marcl,mradi,mrat,mptv,-,mcoor,mabsc,mordi,mslop,mform',
+						],
+						// 显示快捷标签.
+						show_fast_label: true,
+						fast_label_items_ex: "A,B,C,D,E,F,G,H,M,N,P,Q,O,a,b,c,d,l,m,n",
+					},
+				};//}}}
+				var geoDiv = document.getElementById('geo_cont_div');
+				var gpad = GPad.GeoPad.create_pad(geoDiv, opt);
+			});
+		</script>
+	</body>
+</html>
